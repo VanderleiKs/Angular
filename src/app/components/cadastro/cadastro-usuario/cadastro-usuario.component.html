@@ -1,0 +1,27 @@
+
+<div class="Pagina" style="width: 100%; color: rgb(255, 255, 255); background-color: rgb(120, 157, 224);">
+    <form>
+      <div class="container">
+      <div class="form-group">
+        <h3 class="fas fa-h3"> Cadastro Usuario</h3>
+      <br>
+      </div>
+    <div class="form-group">
+      <label for="user">Login:</label>
+      <input type="email" #login="ngModel" id="login" name="login" [(ngModel)]="usuario.login" class="form-control" placeholder="Digite o login" required>
+      <div *ngIf="login.invalid" class="alert alert-danger">Este campo é obrigatório</div>
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha:</label>
+      <input type="password" #senha="ngModel" id="senha" name="senha" [(ngModel)]="usuario.senha" class="form-control" placeholder="Digite a senha" required>
+      <div *ngIf="senha.invalid" class="alert alert-danger">Este campo é obrigatório</div>
+    </div>
+    <div class="form-group">
+        <label for="user">Nome:</label>
+        <input type="text" #nome="ngModel" id="nome" name="nome" [(ngModel)]="usuario.nome" class="form-control" placeholder="Digite o nome" required>
+        <div *ngIf="nome.invalid" class="alert alert-danger">Este campo é obrigatório</div>
+      </div>
+    <button type="button" class="btn btn-primary" [disabled]="login.invalid || senha.invalid || nome.invalid" (click)="cadastro()">Cadastrar</button>
+    </div>
+    </form>
+    </div>

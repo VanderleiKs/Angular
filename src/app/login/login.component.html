@@ -1,0 +1,21 @@
+<div class="Pagina" style="width: 100%; color: rgb(255, 255, 255); background-color: rgb(120, 157, 224);">
+    <form>
+      <div class="container">
+      <div class="form-group">
+        <h3 class="fas fa-h3"> Login Do Sistema</h3>
+      <br>
+      </div>
+    <div class="form-group">
+      <label for="user">Email:</label>
+      <input type="email" #email="ngModel" id="login" name="login" [(ngModel)]="usuario.login" class="form-control" placeholder="Digite o email" required>
+      <div *ngIf="email.invalid" class="alert alert-danger">Este campo é obrigatório</div>
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha:</label>
+      <input type="password" #senha="ngModel" id="senha" name="senha" [(ngModel)]="usuario.senha" class="form-control" placeholder="Digite a senha" required>
+      <div *ngIf="senha.invalid" class="alert alert-danger">Este campo é obrigatório</div>
+    </div>
+    <button type="button" class="btn btn-primary" [disabled]="email.invalid || senha.invalid" (click)="login()">Acessar</button>
+    </div>
+    </form>
+    </div>
